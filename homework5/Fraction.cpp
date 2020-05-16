@@ -108,13 +108,26 @@ bool Fraction::simplify() {
 @description:	Convert floating-point numbers to fractions
 @input:		double input
 */
-void Fraction::double2fraction(double input) {
+void Fraction::double2fraction(std::string input) {
 	this->setDenominator(1);
-	while((int)input != input) {
-		input = input * 10;
-		this->setDenominator(this->getDenominator() * 10);
+	double a, b;
+	int n;
+	size_t p = input.find(".");
+	if (p != string::npos) {
+		try {
+			a = atol(input.substr(0, p).c_str());
+			n = input.size() - p-1;
+			b = atol(input.substr(p + 1).c_str());
+		}
+		catch (exception& e) {
+			system("cls");
+			cout << e.what();
+			return;
+		}
 	}
-	this->setNumerator((long)input);
+	this->numerator = pow(10, (double)n)*a + b;
+	this->denominator = pow(10, (double)n);
+
 	this->simplify();
 }
 
@@ -356,7 +369,7 @@ Fraction Fraction::operator-(Fraction input) {
 	}
 	else {
 		ans.setDenominator(this->denominator*input.getDenominator());
-		ans.setNumerator(this->denominator*input.getNumerator() - this->numerator*input.getDenominator());
+		ans.setNumerator(-this->denominator*input.getNumerator() + this->numerator*input.getDenominator());
 	}
 	return ans;
 }

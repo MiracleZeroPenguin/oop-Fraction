@@ -122,7 +122,7 @@ void Functions::classifyFunc() {
 */
 void Functions::double2fraction() {
 	Fraction fraction;
-	double input;
+	string input;
 	cout << "Please enter a floating point number like 1.55:" << endl;
 	cin >> input;
 	fraction.double2fraction(input);

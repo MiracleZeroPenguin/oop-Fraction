@@ -22,30 +22,30 @@ public:
 	void setNumerator(long);				//set the numerator of the fraction
 	void setDenominator(long);				//set the denominator of the fraction
 	bool simplify();						//simplify the numerator and the denominator of the fraction
-	void double2fraction(double);			//Convert floating-point numbers to fractions
-	double fraction2double();				
-	bool string2fraction(std::string);
-	bool operator<(Fraction);
-	bool operator<=(Fraction);
-	bool operator>(Fraction);
-	bool operator>=(Fraction);
-	bool operator==(Fraction);
-	bool operator!=(Fraction);
-	long operator%(Fraction);
-	operator double();
-	operator float();
-	operator long();
-	operator std::string();
-	Fraction operator+(Fraction);
-	Fraction operator+=(Fraction);
-	Fraction operator-=(Fraction);
-	Fraction operator-(Fraction);
-	Fraction operator*(Fraction);
-	Fraction operator*=(Fraction);
-	Fraction operator/(Fraction);
-	Fraction operator/=(Fraction);
-	Fraction operator++();
-	Fraction operator--();
+	void double2fraction(std::string);			//Convert floating-point numbers to fractions
+	double fraction2double();				//Convert fractions to floating-point numbers
+	bool string2fraction(std::string);		//Convert string to fraction
+	bool operator<(Fraction);				//Redefining the < of the fraction class
+	bool operator<=(Fraction);				//Redefining the <= of the fraction class
+	bool operator>(Fraction);				//Redefining the > of the fraction class
+	bool operator>=(Fraction);				//Redefining the >= of the fraction class
+	bool operator==(Fraction);				//Redefining the == of the fraction class
+	bool operator!=(Fraction);				//Redefining the != of the fraction class
+	long operator%(Fraction);				//Redefining the % of the fraction class
+	operator double();						//Output fraction in double
+	operator float();						//Output fraction in float
+	operator long();						//Output fraction in long
+	operator std::string();					//Output the simplified fraction in string
+	Fraction operator+(Fraction);			//Redefining the + of the fraction class
+	Fraction operator+=(Fraction);			//Redefining the += of the fraction class
+	Fraction operator-=(Fraction);			//Redefining the -= of the fraction class
+	Fraction operator-(Fraction);			//Redefining the - of the fraction class
+	Fraction operator*(Fraction);			//Redefining the * of the fraction class
+	Fraction operator*=(Fraction);			//Redefining the *= of the fraction class
+	Fraction operator/(Fraction);			//Redefining the / of the fraction class
+	Fraction operator/=(Fraction);			//Redefining the /= of the fraction class
+	Fraction operator++();					//Redefining the ++ of the fraction class
+	Fraction operator--();					//Redefining the -- of the fraction class
 };
 
 class FractionInputFailException :public std::exception {
